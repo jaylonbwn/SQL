@@ -1,0 +1,21 @@
+-- Create a candy store database
+CREATE TABLE candy_store(id INTEGER primary key, Item TEXT, Price INTEGER, Quantity INTEGER, Sold INTEGER);
+
+INSERT INTO candy_store VALUES(1, "Kitkat", 2.99, 40,32);
+INSERT INTO candy_store VALUES(2, "Skittles",3.99, 30, 20);
+INSERT INTO candy_store VALUES(3, "M&Ms", 3.99, 30, 16);
+INSERT INTO candy_store VALUES(4, "Hershey", 1.99, 15, 10);
+INSERT INTO candy_store VALUES(5, "Milk Duds", 4.99, 50, 2);
+INSERT INTO candy_store VALUES(6, "Twislers", 8.99, 24, 10);
+
+-- Display the database ordered by price.
+SELECT * FROM candy_store;
+SELECT * FROM candy_store ORDER BY Price;
+
+--What is the avg price of the items in candy store?
+SELECT avg(Price) FROM candy_store;
+
+-- What are the top 3 highest selling items?
+SELECT Item, Price, Quantity, Sold FROM candy_store
+ORDER by Sold desc
+limit 3
